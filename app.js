@@ -1,8 +1,10 @@
 import express from "express";
 import path from "path";
-import config from "./config";
 import mongoose from "mongoose";
+
+import config from "./config";
 import setupController from "./controller/setupController";
+import apiController from "./controller/apiController";
 
 var app = express();
 var port = process.env.port || 3000;
@@ -25,6 +27,7 @@ db.on("error", (err) => {
   console.error("Database Connection Failed", err);
 });
 
-console.log(setupController)
 setupController(app);
+apiController(app);
+
 app.listen(port);

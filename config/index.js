@@ -10,7 +10,7 @@ module.exports = {
 
     var url = `mongodb+srv://${username}:${password}@cluster0.lrtyt.mongodb.net/${dbname}?retryWrites=true&w=majority`;
 
-    console.log("Connecting to mongo url: ", url);
+    console.log("Connecting to MongoDB URL: ", url);
     return url;
   },
 };
